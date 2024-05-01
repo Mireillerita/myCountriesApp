@@ -18,7 +18,20 @@ const Countries = () => {
         },
       }
     );
+    const Countries = () => {
+      // ... other component state and logic
 
+      getCountries(currentPage); // Call getCountries outside useEffect
+
+      useEffect(() => {
+        // Other side effects that run only on component mount (optional)
+      }, []);
+
+      // ... rest of your Countries component code
+    };
+    const ChangePage = (pageNumber) => {
+      setSearchParams({ page: pageNumber });
+    };
     if (response.status === 200) {
       const data = await response.json();
       setListOfCountries(data);

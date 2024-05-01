@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center">
       <SectionHolder>
-        <Countries />
+        <Countries currentPage={searchParams.page} />
       </SectionHolder>
       <Pagination
         searchParams={searchParams}
